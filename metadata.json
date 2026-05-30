@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Satya X Co",
+  "description": "Luxury black and gold e-commerce website for Satya X Co featuring automated Firebase integrations and a custom WhatsApp checkout process.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "entities": {
+    "Product": {
+      "title": "Product",
+      "description": "A luxury product for Satya X Co",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The custom document ID or generated ID"
+        },
+        "name": {
+          "type": "string",
+          "description": "Product name"
+        },
+        "description": {
+          "type": "string",
+          "description": "Product description"
+        },
+        "price": {
+          "type": "number",
+          "description": "Product pricing in USD or brand currency"
+        },
+        "category": {
+          "type": "string",
+          "description": "Category selection (e.g. Couture, Accessories, Jewelry, Timepieces)"
+        },
+        "images": {
+          "type": "array",
+          "description": "Firebase Storage URLs for product showcases"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Server timestamp of creation"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "Server timestamp of update"
+        }
+      },
+      "required": ["name", "price", "category", "images"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "A customer order submitted for Satya X Co items",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Generated purchase order receipt ID"
+        },
+        "customerName": {
+          "type": "string",
+          "description": "Customer standard billing name"
+        },
+        "customerEmail": {
+          "type": "string",
+          "description": "Customer contact email"
+        },
+        "customerPhone": {
+          "type": "string",
+          "description": "Customer contact/WhatsApp phone number"
+        },
+        "customerAddress": {
+          "type": "string",
+          "description": "Shipping address details"
+        },
+        "items": {
+          "type": "array",
+          "description": "Purchased items with quantities, prices, metadata"
+        },
+        "totalAmount": {
+          "type": "number",
+          "description": "Sum total e-commerce payout amount"
+        },
+        "status": {
+          "type": "string",
+          "description": "Order completion status"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Server timestamp of order"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "Server timestamp of adjustment"
+        }
+      },
+      "required": ["customerName", "customerPhone", "customerAddress", "items", "totalAmount", "status"]
+    }
+  },
+  "firestore": {
+    "/products/{productId}": {
+      "schema": "Product",
+      "description": "Collection of luxury products listed in shop"
+    },
+    "/orders/{orderId}": {
+      "schema": "Order",
+      "description": "Collection of customer purchase orders"
+    }
+  }
+}
