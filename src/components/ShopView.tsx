@@ -182,7 +182,7 @@ export default function ShopView({
         textMessage += `${index + 1}. _${item.product.name}_ (Qty: *${item.quantity}*) — $${(item.product.price * item.quantity).toLocaleString()}\n`;
       });
 
-      textMessage += `\n*TOTAL VALUATION:* $${subtotal.toLocaleString()} USD\n`;
+      textMessage += `\n*TOTAL VALUATION:* $${subtotal.toLocaleString()} INR\n`;
       textMessage += `===============================\n`;
       textMessage += `_Please confirm my luxury dispatch of items. Thank you._`;
 
@@ -332,7 +332,7 @@ export default function ShopView({
 
                     <div className="flex items-center justify-between pt-2 border-t border-[#D4AF37]/10">
                       <span className="font-mono text-xs tracking-widest text-[#D4AF37] font-semibold">
-                        ${p.price.toLocaleString()} USD
+                        ₹{p.price.toLocaleString()} 
                       </span>
                       <span className="text-[9px] tracking-[0.15em] font-mono text-gray-500 uppercase group-hover:text-[#D4AF37] transition-colors flex items-center gap-1">
                         VIEW PIECE &rarr;
@@ -427,7 +427,7 @@ export default function ShopView({
                   {selectedProduct.name}
                 </h2>
                 <div className="inline-block px-3 py-1.5 bg-[#171510] border border-[#D4AF37]/30 text-[#D4AF37] text-xs font-mono tracking-widest mb-6">
-                  ${selectedProduct.price.toLocaleString()} USD
+                 ₹{selectedProduct.price.toLocaleString()} 
                 </div>
                 <div className="border-t border-[#D4AF37]/15 pt-6 mb-6">
                   <h4 className="text-[10px] tracking-widest uppercase text-gray-500 font-medium mb-2">Acquisition Details</h4>
@@ -525,7 +525,7 @@ export default function ShopView({
                     <div className="flex-grow">
                       <h4 className="font-serif text-xs text-white tracking-wide leading-snug line-clamp-1">{item.product.name}</h4>
                       <div className="font-mono text-xs text-[#D4AF37] mt-1 mb-2 font-semibold">
-                        ${item.product.price.toLocaleString()} USD
+                        ₹{item.product.price.toLocaleString()} 
                       </div>
                       
                       {/* Plus / Minus selector controls */}
@@ -564,7 +564,7 @@ export default function ShopView({
               <div className="flex justify-between items-center mb-6">
                 <span className="text-xs uppercase tracking-widest text-gray-400 font-sans">Valuation Sum</span>
                 <span id="cart-subtotal-payout" className="font-mono text-base tracking-wider text-[#D4AF37] font-semibold">
-                  ${subtotal.toLocaleString()} USD
+                  ₹{subtotal.toLocaleString()} 
                 </span>
               </div>
               
@@ -686,7 +686,7 @@ export default function ShopView({
                 {/* Checkout pricing details card */}
                 <div className="p-4 bg-[#14120e] border border-[#D4AF37]/20 text-center mb-2">
                   <p className="text-[9px] font-sans tracking-widest text-gray-500 uppercase">Acquisitions Total Valuation</p>
-                  <h4 className="font-mono text-sm text-[#D4AF37] font-semibold mt-1">${subtotal.toLocaleString()} USD</h4>
+                  <h4 className="font-mono text-sm text-[#D4AF37] font-semibold mt-1">₹{subtotal.toLocaleString()} </h4>
                 </div>
 
                 {/* Submit trigger button */}
