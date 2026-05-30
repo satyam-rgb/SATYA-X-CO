@@ -51,13 +51,7 @@ export default function Navbar({
           >
             Collections
           </button>
-          <button 
-            id="nav-link-admin"
-            onClick={() => onViewChange('admin')}
-            className={`transition-colors duration-300 uppercase ${currentView === 'admin' ? 'text-[#D4AF37] border-b border-[#D4AF37] pb-1 font-semibold' : 'text-gray-400 hover:text-[#D4AF37] underline decoration-[#D4AF37]/40'}`}
-          >
-            Admin Portal
-          </button>
+         
         </nav>
 
         {/* Interaction Group & Live Status Indicator */}
@@ -68,14 +62,7 @@ export default function Navbar({
           </div>
 
           {/* Quick Mobile Admin Menu or Mobile Active Views */}
-          <button 
-            id="nav-admin-btn"
-            onClick={() => onViewChange('admin')}
-            className={`md:hidden p-2 text-gray-400 hover:text-gold-accent transition-colors duration-300 ${currentView === 'admin' ? 'text-gold-accent' : ''}`}
-            title="Admin Panel"
-          >
-            <Sliders className="w-5 h-5" />
-          </button>
+          
 
           <button 
             id="nav-shop-mobile"

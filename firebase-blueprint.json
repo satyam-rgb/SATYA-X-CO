@@ -19,7 +19,7 @@
         },
         "price": {
           "type": "number",
-          "description": "Product pricing in USD or brand currency"
+          "description": "Product pricing in ₹ or brand currency"
         },
         "category": {
           "type": "string",
