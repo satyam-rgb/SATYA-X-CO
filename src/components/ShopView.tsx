@@ -169,22 +169,32 @@ export default function ShopView({
       setCheckoutSuccess(true);
 
       // Create pre-formatted elegant WhatsApp message
-      let textMessage = `*SATYA X CO — NEW ACQUISITION MEMORANDUM*\n`;
-      textMessage += `===============================\n`;
-      textMessage += `*Order ID:* #${orderId}\n`;
-      textMessage += `*Client Name:* ${customerName}\n`;
-      textMessage += `*Client Phone:* ${customerPhone}\n`;
-      if (customerEmail) textMessage += `*Client Email:* ${customerEmail}\n`;
-      textMessage += `*Delivery Address:* ${customerAddress}\n\n`;
+      let textMessage = `🏛️ *SATYA X CO — ORDER CONFIRMATION*\n\n`;
 
-      textMessage += `*ACQUISITIONS & LINE-ITEMS:*\n`;
-      cart.forEach((item, index) => {
-        textMessage += `${index + 1}. _${item.product.name}_ (Qty: *${item.quantity}*) — $${(item.product.price * item.quantity).toLocaleString()}\n`;
-      });
+textMessage += `📦 *Order ID:* #${orderId}\n`;
+textMessage += `👤 *Client:* ${customerName}\n`;
+textMessage += `📞 *Phone:* ${customerPhone}\n`;
 
-      textMessage += `\n*TOTAL VALUATION:* $${subtotal.toLocaleString()} INR\n`;
-      textMessage += `===============================\n`;
-      textMessage += `_Please confirm my luxury dispatch of items. Thank you._`;
+if (customerEmail) {
+  textMessage += `📧 *Email:* ${customerEmail}\n`;
+}
+
+textMessage += `📍 *Address:* ${customerAddress}\n\n`;
+
+textMessage += `━━━━━━━━━━━━━━━━━━\n`;
+textMessage += `🛍️ *ORDER ITEMS*\n\n`;
+
+cart.forEach((item, index) => {
+  textMessage += `${index + 1}. ${item.product.name}\n`;
+  textMessage += `   Qty: ${item.quantity}\n`;
+  textMessage += `   ₹${(item.product.price * item.quantity).toLocaleString()}\n\n`;
+});
+
+textMessage += `━━━━━━━━━━━━━━━━━━\n`;
+textMessage += `💎 *TOTAL ORDER VALUE*\n`;
+textMessage += `₹${subtotal.toLocaleString()} INR\n`;
+textMessage += `━━━━━━━━━━━━━━━━━━\n\n`;
+textMessage += `✨ Thank you for choosing SATYA X CO`;
 
       const encodedMessage = encodeURIComponent(textMessage);
       const cleanPhone = adminWhatsAppPhone.replace(/[^0-9+]/g, ''); // Numbers & '+' only
