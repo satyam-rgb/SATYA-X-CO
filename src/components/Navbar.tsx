@@ -53,7 +53,15 @@ export default function Navbar({
           </button>
          <button
   id="nav-link-admin"
-  onClick={() => onViewChange('admin')}
+  onClick={() => {
+    const password = prompt("Enter Admin Password");
+
+    if (password === "SatyaX@2026") {
+      onViewChange('admin');
+    } else if (password !== null) {
+      alert("Wrong Password");
+    }
+  }}
   className="transition-colors duration-300 uppercase text-gray-400 hover:text-[#D4AF37]"
 >
   Admin
