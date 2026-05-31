@@ -671,7 +671,7 @@ textMessage += `✨ Thank you for choosing SATYA X CO`;
                     required
                     value={customerPhone}
                     onChange={(e) => setCustomerPhone(e.target.value)}
-                    placeholder="+91 99999 99999"
+                    placeholder="+91 7558378398"
                     className="w-full bg-[#141414] border border-[#D4AF37]/20 px-4 py-3 text-xs text-white focus:outline-none focus:border-[#D4AF37] rounded-none tracking-wider"
                   />
                 </div>

@@ -170,11 +170,11 @@ export default function App() {
             <div className="space-y-4 text-xs text-gray-400 font-light">
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-[#D4AF37]" />
-                <span className="tracking-widest font-mono text-[11px]">concierge@satyaxco.com</span>
+                <span className="tracking-widest font-mono text-[11px]">contact.satyaxco@gmail.com</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-[#D4AF37]" />
-                <span className="tracking-widest font-mono text-[11px]">+91 99999 99999</span>
+                <span className="tracking-widest font-mono text-[11px]">+91 7558378398</span>
               </div>
               
               {/* Decorative premium news register */}
