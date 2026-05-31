@@ -30,7 +30,7 @@ import {
 
 export default function AdminView() {
   // Authentication block passkey (Demo: empty represents unlocked)
-  const [isAdminUnlocked, setIsAdminUnlocked] = useState<boolean>(true);
+  const [isAdminUnlocked, setIsAdminUnlocked] = useState<boolean>(false);
   const [passkey, setPasskey] = useState<string>('');
   
   // Data list states
@@ -269,22 +269,35 @@ export default function AdminView() {
           <p className="text-xs text-gray-500 max-w-xs mx-auto mb-8">Access is restricted to authorized personnel. Enter your Administrative Passcode to unlock the ledger core.</p>
           
           <div className="space-y-4">
-            <input
-              type="password"
-              placeholder="PASSCODE (Press Enter to Demo)"
-              value={passkey}
-              onChange={(e) => setPasskey(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter') setIsAdminUnlocked(true);
-              }}
-              className="w-full bg-[#111] border border-[#D4AF37]/30 text-center py-3.5 text-xs text-white uppercase tracking-[0.3em] font-mono focus:outline-none focus:border-[#D4AF37]"
-            />
-            <button
-              onClick={() => setIsAdminUnlocked(true)}
-              className="w-full py-4 bg-transparent border border-[#D4AF37]/45 text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black tracking-widest text-xs uppercase font-semibold transition-all cursor-pointer"
-            >
-              Verify Credentials
-            </button>
+           <input
+  type="password"
+  placeholder="PASSCODE"
+  value={passkey}
+  onChange={(e) => setPasskey(e.target.value)}
+  onKeyDown={(e) => {
+    if (e.key === 'Enter') {
+      if (passkey === 'SatyaX@2026') {
+        setIsAdminUnlocked(true);
+      } else {
+        alert('Wrong Password');
+      }
+    }
+  }}
+  className="w-full bg-[#111] border border-[#D4AF37]/30 text-center py-3.5 text-xs text-white uppercase tracking-[0.3em] font-mono focus:outline-none focus:border-[#D4AF37]"
+/>
+
+<button
+  onClick={() => {
+    if (passkey === 'SatyaX@2026') {
+      setIsAdminUnlocked(true);
+    } else {
+      alert('Wrong Password');
+    }
+  }}
+  className="w-full py-4 bg-transparent border border-[#D4AF37]/45 text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black tracking-widest text-xs uppercase font-semibold transition-all cursor-pointer"
+>
+  Verify Credentials
+</button>
           </div>
         </div>
       ) : (
