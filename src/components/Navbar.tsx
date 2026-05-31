@@ -51,7 +51,13 @@ export default function Navbar({
           >
             Collections
           </button>
-         
+         <button
+  id="nav-link-admin"
+  onClick={() => onViewChange('admin')}
+  className="transition-colors duration-300 uppercase text-gray-400 hover:text-[#D4AF37]"
+>
+  Admin
+</button>
         </nav>
 
         {/* Interaction Group & Live Status Indicator */}
