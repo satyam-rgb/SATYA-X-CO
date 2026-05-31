@@ -31,7 +31,7 @@ export default function HomeView({ onNavigateToShop }: HomeViewProps) {
 
   const collections = [
     {
-      title: "SHOP NOW",
+      title: "Haute Couture",
       desc: "Tailored luxury gowns and outerwear curated for high-profile gatherings.",
       category: "Couture",
       image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&q=80&w=600"
@@ -79,14 +79,13 @@ export default function HomeView({ onNavigateToShop }: HomeViewProps) {
               id="hero-title"
               className="font-serif text-4xl sm:text-6xl font-light tracking-wide text-white mb-6 leading-tight"
             >
-              PREMIUM FASHION & LUXURY ACCESSORIES <br />
+              Artisan Craft Meets <br />
               <span className="text-[#D4AF37] italic font-normal">Pure Luxury</span>
             </h1>
 
             <p className="font-sans text-gray-400 font-light text-sm md:text-base mb-10 tracking-wider leading-relaxed">
-              Discover premium sunglasses, handbags, wallets and accessories designed for modern style and everyday luxury.
-
-Order directly through WhatsApp with fast support and secure service.
+              Satya X Co crafts exceptional couture, legendary timepieces, and platinum items for individuals who cherish pure scarcity and unparalleled mastery. Direct checkout is available via WhatsApp for premium members.
+            </p>
 
             <div className="flex flex-col sm:flex-row justify-start items-center gap-4">
               <button
@@ -102,7 +101,7 @@ Order directly through WhatsApp with fast support and secure service.
                 onClick={() => onNavigateToShop('Couture')}
                 className="w-full sm:w-auto px-10 py-4 text-[10px] font-bold uppercase tracking-[0.22em] bg-transparent border border-[#D4AF37]/40 text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black transition-all"
               >
-                SHOP NOW
+                Haute Couture
               </button>
             </div>
           </div>
